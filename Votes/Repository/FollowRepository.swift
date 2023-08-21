@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Profile
 
 protocol IFollowRepository {
     func createFollow(owner: FollowerProfile, following: FollowingProfile) async throws

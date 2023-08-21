@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Profile
 
 protocol IProfileRepository {
     func getProfile(userID: String) async throws -> Profile

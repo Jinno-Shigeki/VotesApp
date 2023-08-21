@@ -80,6 +80,7 @@
 		5A7780772A6C47340097DCA0 /* ProfileCellContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7780762A6C47340097DCA0 /* ProfileCellContext.swift */; };
 		5A77807F2A6D64440097DCA0 /* VoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77807E2A6D64440097DCA0 /* VoteData.swift */; };
 		5A7780812A6D7FE80097DCA0 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7780802A6D7FE80097DCA0 /* Vote.swift */; };
+		5ABE95EC2A93BB1D00915788 /* Profile in Frameworks */ = {isa = PBXBuildFile; productRef = 5ABE95EB2A93BB1D00915788 /* Profile */; };
 		5AE0841B2A4FF31B001BC39D /* CompleteRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE0841A2A4FF31B001BC39D /* CompleteRegister.swift */; };
 		5AE0841E2A4FF5FA001BC39D /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE0841D2A4FF5FA001BC39D /* ProfileEditor.swift */; };
 		5AE084202A55B08B001BC39D /* FollowProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE0841F2A55B08B001BC39D /* FollowProfileRepository.swift */; };
@@ -175,6 +176,7 @@
 		5A7780762A6C47340097DCA0 /* ProfileCellContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellContext.swift; sourceTree = "<group>"; };
 		5A77807E2A6D64440097DCA0 /* VoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteData.swift; sourceTree = "<group>"; };
 		5A7780802A6D7FE80097DCA0 /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
+		5ABE95E52A93B8CC00915788 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		5AE0841A2A4FF31B001BC39D /* CompleteRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteRegister.swift; sourceTree = "<group>"; };
 		5AE0841D2A4FF5FA001BC39D /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		5AE0841F2A55B08B001BC39D /* FollowProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowProfileRepository.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				5A4FA5B02A17B89400120DC7 /* FirebaseAuth in Frameworks */,
 				5A4FA5B82A17B89500120DC7 /* FirebaseFirestore in Frameworks */,
 				5A4FA5BA2A17B89500120DC7 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				5ABE95EC2A93BB1D00915788 /* Profile in Frameworks */,
 				5A4FA5BC2A17B89500120DC7 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,10 +291,12 @@
 		5A4DA6F12A0BDD6B003E50C0 = {
 			isa = PBXGroup;
 			children = (
+				5ABE95E42A93B8CC00915788 /* Packages */,
 				5A4DA6FC2A0BDD6B003E50C0 /* Votes */,
 				5A4DA7132A0BDD6C003E50C0 /* VotesTests */,
 				5A4DA71D2A0BDD6C003E50C0 /* VotesUITests */,
 				5A4DA6FB2A0BDD6B003E50C0 /* Products */,
+				5ABE95E62A93B8E500915788 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -529,6 +534,21 @@
 			path = Context;
 			sourceTree = "<group>";
 		};
+		5ABE95E42A93B8CC00915788 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				5ABE95E52A93B8CC00915788 /* Domain */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		5ABE95E62A93B8E500915788 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5AE084182A4FF29E001BC39D /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +609,7 @@
 				5A4FA5BB2A17B89500120DC7 /* FirebaseFirestoreSwift */,
 				5A4FA5BD2A17B89500120DC7 /* FirebaseFunctions */,
 				5A4FA5BF2A17B89500120DC7 /* FirebaseFunctionsCombine-Community */,
+				5ABE95EB2A93BB1D00915788 /* Profile */,
 			);
 			productName = Votes;
 			productReference = 5A4DA6FA2A0BDD6B003E50C0 /* Votes.app */;
@@ -1159,6 +1180,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A4FA5AC2A17B89400120DC7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFunctionsCombine-Community";
+		};
+		5ABE95EB2A93BB1D00915788 /* Profile */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Profile;
 		};
 /* End XCSwiftPackageProductDependency section */
 

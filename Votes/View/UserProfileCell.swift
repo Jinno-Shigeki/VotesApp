@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Profile
 
 struct UserProfileCell: View {
-    let profile: any ProfileBase
+    let profile: any IProfileBase
 
-    init(profile: any ProfileBase) {
+    init(profile: any IProfileBase) {
         self.profile = profile
     }
 

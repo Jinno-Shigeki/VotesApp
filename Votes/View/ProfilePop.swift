@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import Profile
 
 struct ProfilePop: View {
     @Binding var isPopShow: Bool
     let context: ProfilePopContext
-    let profile: ProfileBase
+    let profile: IProfileBase
     let onConfirm: () -> Void
     let onCnacel: () -> Void
     
-    init(isPopShow: Binding<Bool>, context: ProfilePopContext, profile: ProfileBase, onConfirm: @escaping () -> Void, onCnacel: @escaping () -> Void = {}) {
+    init(isPopShow: Binding<Bool>, context: ProfilePopContext, profile: IProfileBase, onConfirm: @escaping () -> Void, onCnacel: @escaping () -> Void = {}) {
         self._isPopShow = isPopShow
         self.context = context
         self.profile = profile

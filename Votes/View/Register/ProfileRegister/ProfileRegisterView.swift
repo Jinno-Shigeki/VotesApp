@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Profile
 
 struct ProfileRegisterView: View {
     @EnvironmentObject private var enviroment: CompleteRegister

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Profile
 
 struct UserProfileDetails: View {
     var profile: Profile

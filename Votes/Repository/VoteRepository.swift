@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Profile
 
 protocol IVoteRepository {
-    func createVote(ownerProfileBase: ProfileBase, voteProfileBase: ProfileBase, question: String) async throws
+    func createVote(ownerProfileBase: IProfileBase, voteProfileBase: IProfileBase, question: String) async throws
     func getVoteHistory(userID: String) async throws -> [Vote]
 }
 
@@ -19,7 +20,7 @@ struct VoteRepository: IVoteRepository {
         self.fireStoreGateway = fireStoreGateway
     }
     
-    func createVote(ownerProfileBase: ProfileBase, voteProfileBase: ProfileBase, question: String) async throws {
+    func createVote(ownerProfileBase: IProfileBase, voteProfileBase: IProfileBase, question: String) async throws {
         let ownerVoteData = convertVote(profileBase: ownerProfileBase, question: question)
         let votedData = convertVote(profileBase: voteProfileBase, question: question)
         try await fireStoreGateway.createVote(ownerVote: votedData, followVote: ownerVoteData)
@@ -34,7 +35,7 @@ struct VoteRepository: IVoteRepository {
 }
 
 extension VoteRepository {
-    func convertVote(profileBase: ProfileBase, question: String) -> VoteData {
+    func convertVote(profileBase: IProfileBase, question: String) -> VoteData {
         return VoteData(
             id: profileBase.id,
             name: profileBase.name,

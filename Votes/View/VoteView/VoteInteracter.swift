@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Profile
 
 @MainActor
 final class VoteInteractor: ObservableObject {
@@ -40,7 +41,7 @@ final class VoteInteractor: ObservableObject {
         }
     }
     
-    func vote(votedProfile: ProfileBase, question: String, complition: @escaping () -> Void) {
+    func vote(votedProfile: IProfileBase, question: String, complition: @escaping () -> Void) {
         Task {
             do {
                 let profile = try await profileRepository.getProfile(userID: userID)

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Profile
 
 protocol IFollowProfileRepository {
     func getFollowerProfiles(userID: String) async throws -> [FollowerProfile]

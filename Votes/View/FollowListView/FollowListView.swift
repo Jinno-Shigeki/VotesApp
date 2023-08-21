@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import Profile
 
 struct FollowListView: View {
     @StateObject private var interactor = FollowListInteractor(followProfileRepository: RepositoryDependency.followProfileRepository)

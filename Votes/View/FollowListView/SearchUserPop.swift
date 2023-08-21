@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Profile
 
 struct SearchUserPop: View {
     @Environment(\.presentationMode) var presentationMode

@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import Profile
 
 final class FollowEditor: ObservableObject {
     @Published var isFollowing = false
-    let profile: any ProfileBase
+    let profile: any IProfileBase
     
-    init(base: any ProfileBase, isFollowing: Bool = false) {
+    init(base: any IProfileBase, isFollowing: Bool = false) {
         self.isFollowing = isFollowing
         self.profile = base
     }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Profile
 
 @MainActor
 final class FollowListInteractor: Interactor {

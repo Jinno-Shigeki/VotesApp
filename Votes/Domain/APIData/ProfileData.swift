@@ -20,13 +20,6 @@ struct ProfileData: Codable {
         self.message = message
     }
     
-    init(profile: Profile) {
-        self.id = profile.id
-        self.name = profile.name
-        self.image = profile.image
-        self.message = profile.message
-    }
-    
     enum CodingKeys: String, CodingKey {
         case id
         case name

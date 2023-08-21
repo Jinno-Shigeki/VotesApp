@@ -9,6 +9,7 @@ import CryptoKit
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
+import Profile
 
 protocol IFireStoreGateway {
     func create<T: Codable>(_ path: Path, _ data: T) async throws

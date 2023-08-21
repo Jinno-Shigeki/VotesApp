@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Profile
 
 struct VoteView: View {
     @StateObject private var interactor = VoteInteractor(
@@ -80,14 +81,14 @@ struct VoteView: View {
 extension VoteView {
     struct PopCreater {
         var isActive: Bool
-        var profileBase: ProfileBase?
+        var profileBase: IProfileBase?
         
-        init(isActive: Bool, profileBase: ProfileBase? = nil) {
+        init(isActive: Bool, profileBase: IProfileBase? = nil) {
             self.isActive = isActive
             self.profileBase = profileBase
         }
         
-        mutating func active(base: ProfileBase) {
+        mutating func active(base: IProfileBase) {
             isActive = true
             profileBase = base
         }

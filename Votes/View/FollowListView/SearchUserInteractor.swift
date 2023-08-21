@@ -6,8 +6,7 @@
 //
 
 import Foundation
-
-import Foundation
+import Profile
 
 @MainActor
 final class SearchUserInteractor: Interactor {
