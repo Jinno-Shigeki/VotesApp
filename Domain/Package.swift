@@ -12,6 +12,9 @@ let package = Package(
             name: "Domain",
             targets: ["Domain"]),
         .library(
+            name: "Entry",
+            targets: ["Entry"]),
+        .library(
             name: "Profile",
             targets: ["Profile"]),
     ],
@@ -24,6 +27,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "Domain",
+            dependencies: []),
+        .target(
+            name: "Entry",
             dependencies: []),
         .target(
             name: "Profile",

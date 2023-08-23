@@ -39,14 +39,14 @@ struct ProfileRepository: IProfileRepository {
     }
     
     func createProfile(accountID: String, profile: ProfileEditor) async throws {
-        let account = try KeyChainService.shared.getAccount(accountID: accountID)
+        let entry = try KeyChainService.shared.getEntry(userID: accountID)
         let profileData = ProfileData(
             id: profile.id,
             name: profile.name,
             message: profile.message,
             image: profile.image)
-        let accountData = AccountData(email: account.email, password: account.password, userID: profile.id)
-        try await fireStoreGateway.createProfile(accountID: account.accountID, account: accountData, profile: profileData)
+        let accountData = AccountData(email: entry.email, password: entry.password, userID: profile.id)
+        try await fireStoreGateway.createProfile(accountID: entry.userID, account: accountData, profile: profileData)
 //        cache[NSString(string: profile.id)] = ProfileCache(profile: profile)
     }
 }

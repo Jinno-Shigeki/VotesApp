@@ -81,6 +81,7 @@
 		5A77807F2A6D64440097DCA0 /* VoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77807E2A6D64440097DCA0 /* VoteData.swift */; };
 		5A7780812A6D7FE80097DCA0 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7780802A6D7FE80097DCA0 /* Vote.swift */; };
 		5ABE95EC2A93BB1D00915788 /* Profile in Frameworks */ = {isa = PBXBuildFile; productRef = 5ABE95EB2A93BB1D00915788 /* Profile */; };
+		5ABE95EE2A96643100915788 /* Entry in Frameworks */ = {isa = PBXBuildFile; productRef = 5ABE95ED2A96643100915788 /* Entry */; };
 		5AE0841B2A4FF31B001BC39D /* CompleteRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE0841A2A4FF31B001BC39D /* CompleteRegister.swift */; };
 		5AE0841E2A4FF5FA001BC39D /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE0841D2A4FF5FA001BC39D /* ProfileEditor.swift */; };
 		5AE084202A55B08B001BC39D /* FollowProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE0841F2A55B08B001BC39D /* FollowProfileRepository.swift */; };
@@ -191,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ABE95EE2A96643100915788 /* Entry in Frameworks */,
 				5A4FA5B62A17B89500120DC7 /* FirebaseDatabaseSwift in Frameworks */,
 				5A4FA5B22A17B89400120DC7 /* FirebaseAuthCombine-Community in Frameworks */,
 				5A4FA5C02A17B89500120DC7 /* FirebaseFunctionsCombine-Community in Frameworks */,
@@ -610,6 +612,7 @@
 				5A4FA5BD2A17B89500120DC7 /* FirebaseFunctions */,
 				5A4FA5BF2A17B89500120DC7 /* FirebaseFunctionsCombine-Community */,
 				5ABE95EB2A93BB1D00915788 /* Profile */,
+				5ABE95ED2A96643100915788 /* Entry */,
 			);
 			productName = Votes;
 			productReference = 5A4DA6FA2A0BDD6B003E50C0 /* Votes.app */;
@@ -1184,6 +1187,10 @@
 		5ABE95EB2A93BB1D00915788 /* Profile */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Profile;
+		};
+		5ABE95ED2A96643100915788 /* Entry */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Entry;
 		};
 /* End XCSwiftPackageProductDependency section */
 

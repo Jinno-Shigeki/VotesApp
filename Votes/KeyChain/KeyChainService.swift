@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Entry
 
 final class KeyChainService {
     static let shared = KeyChainService()
@@ -15,17 +16,17 @@ final class KeyChainService {
         
     }
     
-    func saveAccount(account: Account) {
+    func saveEntry(entry: Entry) {
         let encoder = JSONEncoder()
-        guard let data = try? encoder.encode(account) else {
+        guard let data = try? encoder.encode(entry) else {
             debugPrint("keychain error: decode.")
             return
         }
         
-        if update(data: data, accountName: account.accountID) {
+        if update(data: data, accountName: entry.userID) {
             return
         }
-        create(data: data, accountName: account.accountID)
+        create(data: data, accountName: entry.userID)
     }
     
     private func create(data: Data, accountName: String) {
@@ -61,11 +62,11 @@ final class KeyChainService {
         return true
     }
     
-    func getAccount(accountID: String) throws -> Account {
+    func getEntry(userID: String) throws -> Entry {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: serviceName,
-            kSecAttrAccount as String: accountID,
+            kSecAttrAccount as String: userID,
             kSecMatchLimit as String: kSecMatchLimitOne,
             kSecReturnData as String: true,
         ]
@@ -82,7 +83,7 @@ final class KeyChainService {
             throw NSError(domain: status.description, code: 503)
         }
         let decoder = JSONDecoder()
-        guard let account = try? decoder.decode(Account.self, from: data) else { throw NSError() }
-        return account
+        guard let entry = try? decoder.decode(Entry.self, from: data) else { throw NSError() }
+        return entry
     }
 }
