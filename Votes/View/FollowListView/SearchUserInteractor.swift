@@ -9,7 +9,7 @@ import Foundation
 import Profile
 
 @MainActor
-final class SearchUserInteractor: Interactor {
+final class SearchUserInteractor: ObservableObject {
     let profileRepository: IProfileRepository
     @Published var profiles: [OtherProfile] = [OtherProfile(id: "", name: "", image: "")]
     

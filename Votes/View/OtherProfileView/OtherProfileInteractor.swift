@@ -9,7 +9,7 @@ import Foundation
 import Profile
 
 @MainActor
-final class OtherProfileInteractor: Interactor {
+final class OtherProfileInteractor: ObservableObject {
     private let profileRepository: IProfileRepository
     private let followRepository: IFollowRepository
     @Published var profile = Profile(id: "", name: "", image: "", message: "", following: 0, follower: 0, votes: 0)
@@ -27,9 +27,7 @@ final class OtherProfileInteractor: Interactor {
             do {
                 profile = try await profileRepository.getProfile(userID: userID)
             } catch {
-                let wrapper = ErrorWrapper(error: error)
-                alertObject = AlertObject(errorCode: wrapper.errprCode, message: wrapper.message)
-                alertObject.isAlert = true
+                
             }
         }
     }

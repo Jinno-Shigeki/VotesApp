@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
-final class SignUpInteractor: Interactor {
+final class SignUpInteractor: ObservableObject {
     let accountRepository: IAccountRepository
     private var task: Task<Void, Never>?
     
@@ -28,9 +28,7 @@ final class SignUpInteractor: Interactor {
                 LocalSave.setStr(accountID, .accountID)
                 completion()
             } catch {
-                let wrapper = ErrorWrapper(error: error)
-                alertObject = AlertObject(errorCode: wrapper.errprCode, message: wrapper.message)
-                alertObject.active()
+                
             }
         }
     }

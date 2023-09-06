@@ -70,7 +70,6 @@ struct SignUpView: View {
             .padding(.top, 40)
         }
         .padding(.horizontal, 48)
-        .customAlert(for: $interactor.alertObject)
     }
 }
 

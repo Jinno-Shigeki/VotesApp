@@ -7,6 +7,6 @@
 
 import Foundation
 
-class Interactor: ObservableObject {
-    @Published var alertObject = AlertObject(errorCode: 0, message: "")
-}
+//class Interactor: ObservableObject {
+//    @Published var alertObject = AlertObject(errorCode: 0, message: "")
+//}

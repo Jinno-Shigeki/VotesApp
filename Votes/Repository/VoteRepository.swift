@@ -7,6 +7,7 @@
 
 import Foundation
 import Profile
+import Vote
 
 protocol IVoteRepository {
     func createVote(ownerProfileBase: IProfileBase, voteProfileBase: IProfileBase, question: String) async throws

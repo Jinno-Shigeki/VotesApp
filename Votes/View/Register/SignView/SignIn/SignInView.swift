@@ -68,7 +68,6 @@ struct SignInView: View {
         }
         .padding(.horizontal, 48)
         .padding(.top, 20)
-        .customAlert(for: $interactor.alertObject)
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 import Profile
 
 @MainActor
-final class FollowListInteractor: Interactor {
+final class FollowListInteractor: ObservableObject {
     let followProfileRepository: IFollowProfileRepository
     @Published var followingProfiles: [FollowingProfile] = [FollowingProfile(id: "", name: "", image: "")]
     
@@ -34,9 +34,7 @@ final class FollowListInteractor: Interactor {
             do {
                 followingProfiles = try await followProfileRepository.getFollowingProfiles(userID: userID)
             } catch {
-                let wrapper = ErrorWrapper(error: error)
-                alertObject = AlertObject(errorCode: wrapper.errprCode, message: wrapper.message)
-                alertObject.isAlert = true
+                
             }
         }
     }

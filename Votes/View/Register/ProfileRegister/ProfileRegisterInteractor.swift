@@ -9,7 +9,7 @@ import Foundation
 import Profile
 
 @MainActor
-final class ProfileRegisterInteractor: Interactor {
+final class ProfileRegisterInteractor: ObservableObject {
     private let profileRepository: IProfileRepository
     private var task: Task<Void, Never>?
     
@@ -29,9 +29,7 @@ final class ProfileRegisterInteractor: Interactor {
                 LocalSave.setStr(editor.id, .userID)
                 complition()
             } catch {
-                let wrapper = ErrorWrapper(error: error)
-                alertObject = AlertObject(errorCode: wrapper.errprCode, message: wrapper.message)
-                alertObject.active()
+                
             }
         }
     }

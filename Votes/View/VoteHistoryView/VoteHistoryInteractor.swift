@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Vote
 
 @MainActor
 final class VoteHistoryInteractor: ObservableObject {

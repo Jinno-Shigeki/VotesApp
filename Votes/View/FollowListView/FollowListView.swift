@@ -65,7 +65,6 @@ struct FollowListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .accentColor(.black)
         }
-        .customAlert(for: $interactor.alertObject)
     }
 }
 

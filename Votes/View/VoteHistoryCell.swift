@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Vote
 
 struct VoteHistoryCell: View {
     let vote: Vote

@@ -17,6 +17,9 @@ let package = Package(
         .library(
             name: "Profile",
             targets: ["Profile"]),
+        .library(
+            name: "Vote",
+            targets: ["Vote"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -33,6 +36,9 @@ let package = Package(
             dependencies: []),
         .target(
             name: "Profile",
+            dependencies: []),
+        .target(
+            name: "Vote",
             dependencies: []),
         .testTarget(
             name: "DomainTests",
