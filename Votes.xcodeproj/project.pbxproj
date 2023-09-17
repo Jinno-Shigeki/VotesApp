@@ -18,7 +18,6 @@
 		5A2AD88F2A3EDFCF00C6F035 /* OtherProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AD88E2A3EDFCF00C6F035 /* OtherProfileInteractor.swift */; };
 		5A2AD8912A3EE47B00C6F035 /* ProfileRegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AD8902A3EE47B00C6F035 /* ProfileRegisterInteractor.swift */; };
 		5A2AD8932A3F101100C6F035 /* FireStoreGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AD8922A3F101100C6F035 /* FireStoreGateway.swift */; };
-		5A373B3C2A2B1CFD006FDEB3 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A373B3B2A2B1CFD006FDEB3 /* ProfileData.swift */; };
 		5A373B3F2A36AAA3006FDEB3 /* ProfileRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A373B3E2A36AAA3006FDEB3 /* ProfileRegisterView.swift */; };
 		5A373B742A3EA90B006FDEB3 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A373B732A3EA90B006FDEB3 /* RepositoryDependency.swift */; };
 		5A373B782A3EAB21006FDEB3 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A373B772A3EAB21006FDEB3 /* SignUpInteractor.swift */; };
@@ -52,16 +51,11 @@
 		5A4FA5BE2A17B89500120DC7 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 5A4FA5BD2A17B89500120DC7 /* FirebaseFunctions */; };
 		5A4FA5C02A17B89500120DC7 /* FirebaseFunctionsCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 5A4FA5BF2A17B89500120DC7 /* FirebaseFunctionsCombine-Community */; };
 		5A5D31822A65157000647008 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D31812A65157000647008 /* SearchBar.swift */; };
-		5A5F1AAD2A3F4C2E00A7580D /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F1AAC2A3F4C2E00A7580D /* ErrorWrapper.swift */; };
 		5A5F1AB02A408E7000A7580D /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F1AAF2A408E7000A7580D /* CustomAlertView.swift */; };
-		5A5F1AB92A41E6CE00A7580D /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F1AB82A41E6CE00A7580D /* Interactor.swift */; };
-		5A5F1ABB2A4495DE00A7580D /* FollowingProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F1ABA2A4495DE00A7580D /* FollowingProfileData.swift */; };
-		5A5F1ABD2A4495FB00A7580D /* FollowerProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F1ABC2A4495FB00A7580D /* FollowerProfileData.swift */; };
 		5A5F1AC32A45EA5A00A7580D /* FollowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F1AC22A45EA5A00A7580D /* FollowRepository.swift */; };
 		5A748EA92A12593D00917A10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A748EA82A12593D00917A10 /* GoogleService-Info.plist */; };
 		5A748EBD2A125D6100917A10 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A748EBC2A125D6100917A10 /* AppMain.swift */; };
-		5A748EC12A12658700917A10 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A748EC02A12658700917A10 /* AccountRepository.swift */; };
-		5A748EC72A1270C200917A10 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A748EC62A1270C200917A10 /* AccountData.swift */; };
+		5A748EC12A12658700917A10 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A748EC02A12658700917A10 /* LoginRepository.swift */; };
 		5A7780402A651C7C0097DCA0 /* SearchUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77803F2A651C7C0097DCA0 /* SearchUserInteractor.swift */; };
 		5A7780442A65738C0097DCA0 /* FollowEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7780432A65738C0097DCA0 /* FollowEditor.swift */; };
 		5A7780602A682F6B0097DCA0 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77805F2A682F6B0097DCA0 /* PhotoPicker.swift */; };
@@ -72,10 +66,11 @@
 		5A7780722A6C3D9D0097DCA0 /* ProfilePop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7780712A6C3D9D0097DCA0 /* ProfilePop.swift */; };
 		5A7780752A6C3E750097DCA0 /* ProfilePopContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7780742A6C3E750097DCA0 /* ProfilePopContext.swift */; };
 		5A7780772A6C47340097DCA0 /* ProfileCellContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7780762A6C47340097DCA0 /* ProfileCellContext.swift */; };
-		5A77807F2A6D64440097DCA0 /* VoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77807E2A6D64440097DCA0 /* VoteData.swift */; };
+		5A8C1DAF2AB7286F00658EDF /* Repository in Frameworks */ = {isa = PBXBuildFile; productRef = 5A8C1DAE2AB7286F00658EDF /* Repository */; };
+		5A9E8A8B2AB3D0F90018C4D8 /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 5A9E8A8A2AB3D0F90018C4D8 /* Login */; };
 		5ABE95EC2A93BB1D00915788 /* Profile in Frameworks */ = {isa = PBXBuildFile; productRef = 5ABE95EB2A93BB1D00915788 /* Profile */; };
-		5ABE95EE2A96643100915788 /* Entry in Frameworks */ = {isa = PBXBuildFile; productRef = 5ABE95ED2A96643100915788 /* Entry */; };
 		5ABE95F02AA7830400915788 /* Vote in Frameworks */ = {isa = PBXBuildFile; productRef = 5ABE95EF2AA7830400915788 /* Vote */; };
+		5AC6EEEA2AB759F5003BB0E7 /* IRepository in Frameworks */ = {isa = PBXBuildFile; productRef = 5AC6EEE92AB759F5003BB0E7 /* IRepository */; };
 		5AE0841B2A4FF31B001BC39D /* CompleteRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE0841A2A4FF31B001BC39D /* CompleteRegister.swift */; };
 		5AE0841E2A4FF5FA001BC39D /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE0841D2A4FF5FA001BC39D /* ProfileEditor.swift */; };
 		5AE084202A55B08B001BC39D /* FollowProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE0841F2A55B08B001BC39D /* FollowProfileRepository.swift */; };
@@ -113,7 +108,6 @@
 		5A2AD88E2A3EDFCF00C6F035 /* OtherProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileInteractor.swift; sourceTree = "<group>"; };
 		5A2AD8902A3EE47B00C6F035 /* ProfileRegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRegisterInteractor.swift; sourceTree = "<group>"; };
 		5A2AD8922A3F101100C6F035 /* FireStoreGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreGateway.swift; sourceTree = "<group>"; };
-		5A373B3B2A2B1CFD006FDEB3 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		5A373B3E2A36AAA3006FDEB3 /* ProfileRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRegisterView.swift; sourceTree = "<group>"; };
 		5A373B732A3EA90B006FDEB3 /* RepositoryDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDependency.swift; sourceTree = "<group>"; };
 		5A373B772A3EAB21006FDEB3 /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
@@ -142,16 +136,11 @@
 		5A4FA5A22A176D7100120DC7 /* VoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteRepository.swift; sourceTree = "<group>"; };
 		5A4FA5AA2A17AB6600120DC7 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		5A5D31812A65157000647008 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		5A5F1AAC2A3F4C2E00A7580D /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
 		5A5F1AAF2A408E7000A7580D /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
-		5A5F1AB82A41E6CE00A7580D /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
-		5A5F1ABA2A4495DE00A7580D /* FollowingProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingProfileData.swift; sourceTree = "<group>"; };
-		5A5F1ABC2A4495FB00A7580D /* FollowerProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerProfileData.swift; sourceTree = "<group>"; };
 		5A5F1AC22A45EA5A00A7580D /* FollowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowRepository.swift; sourceTree = "<group>"; };
 		5A748EA82A12593D00917A10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A748EBC2A125D6100917A10 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
-		5A748EC02A12658700917A10 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
-		5A748EC62A1270C200917A10 /* AccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
+		5A748EC02A12658700917A10 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		5A77803F2A651C7C0097DCA0 /* SearchUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserInteractor.swift; sourceTree = "<group>"; };
 		5A7780432A65738C0097DCA0 /* FollowEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowEditor.swift; sourceTree = "<group>"; };
 		5A77805F2A682F6B0097DCA0 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
@@ -162,7 +151,8 @@
 		5A7780712A6C3D9D0097DCA0 /* ProfilePop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePop.swift; sourceTree = "<group>"; };
 		5A7780742A6C3E750097DCA0 /* ProfilePopContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePopContext.swift; sourceTree = "<group>"; };
 		5A7780762A6C47340097DCA0 /* ProfileCellContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellContext.swift; sourceTree = "<group>"; };
-		5A77807E2A6D64440097DCA0 /* VoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteData.swift; sourceTree = "<group>"; };
+		5A8C1DAD2AB7282F00658EDF /* Repository */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Repository; sourceTree = "<group>"; };
+		5A8C1DB22AB7368700658EDF /* IRepository */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = IRepository; sourceTree = "<group>"; };
 		5ABE95E52A93B8CC00915788 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		5AE0841A2A4FF31B001BC39D /* CompleteRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteRegister.swift; sourceTree = "<group>"; };
 		5AE0841D2A4FF5FA001BC39D /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
@@ -177,13 +167,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5ABE95EE2A96643100915788 /* Entry in Frameworks */,
 				5A4FA5B62A17B89500120DC7 /* FirebaseDatabaseSwift in Frameworks */,
 				5ABE95F02AA7830400915788 /* Vote in Frameworks */,
 				5A4FA5B22A17B89400120DC7 /* FirebaseAuthCombine-Community in Frameworks */,
+				5A8C1DAF2AB7286F00658EDF /* Repository in Frameworks */,
+				5AC6EEEA2AB759F5003BB0E7 /* IRepository in Frameworks */,
 				5A4FA5C02A17B89500120DC7 /* FirebaseFunctionsCombine-Community in Frameworks */,
 				5A4FA5BE2A17B89500120DC7 /* FirebaseFunctions in Frameworks */,
 				5A4FA5B42A17B89400120DC7 /* FirebaseDatabase in Frameworks */,
+				5A9E8A8B2AB3D0F90018C4D8 /* Login in Frameworks */,
 				5A4FA5B02A17B89400120DC7 /* FirebaseAuth in Frameworks */,
 				5A4FA5B82A17B89500120DC7 /* FirebaseFirestore in Frameworks */,
 				5A4FA5BA2A17B89500120DC7 /* FirebaseFirestoreCombine-Community in Frameworks */,
@@ -378,14 +370,6 @@
 			path = SignView;
 			sourceTree = "<group>";
 		};
-		5A5F1AAB2A3F4BCD00A7580D /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				5A5F1AAC2A3F4C2E00A7580D /* ErrorWrapper.swift */,
-			);
-			name = Error;
-			sourceTree = "<group>";
-		};
 		5A5F1AAE2A408E4200A7580D /* Modifer */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,7 +381,6 @@
 		5A5F1AB72A41E69A00A7580D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				5A5F1AB82A41E6CE00A7580D /* Interactor.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -446,7 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				5A5F1AC42A45EAA100A7580D /* GateWay */,
-				5A748EC02A12658700917A10 /* AccountRepository.swift */,
+				5A748EC02A12658700917A10 /* LoginRepository.swift */,
 				5A4FA5A22A176D7100120DC7 /* VoteRepository.swift */,
 				5A4FA5AA2A17AB6600120DC7 /* ProfileRepository.swift */,
 				5A5F1AC22A45EA5A00A7580D /* FollowRepository.swift */,
@@ -461,22 +444,8 @@
 			children = (
 				5A7780732A6C3E5E0097DCA0 /* Context */,
 				5A5F1AC52A45F82E00A7580D /* DataObject */,
-				5A5F1AAB2A3F4BCD00A7580D /* Error */,
-				5A748EC52A12709000917A10 /* APIData */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		5A748EC52A12709000917A10 /* APIData */ = {
-			isa = PBXGroup;
-			children = (
-				5A748EC62A1270C200917A10 /* AccountData.swift */,
-				5A373B3B2A2B1CFD006FDEB3 /* ProfileData.swift */,
-				5A5F1ABA2A4495DE00A7580D /* FollowingProfileData.swift */,
-				5A5F1ABC2A4495FB00A7580D /* FollowerProfileData.swift */,
-				5A77807E2A6D64440097DCA0 /* VoteData.swift */,
-			);
-			path = APIData;
 			sourceTree = "<group>";
 		};
 		5A7780672A6C13700097DCA0 /* VoteView */ = {
@@ -510,6 +479,8 @@
 			isa = PBXGroup;
 			children = (
 				5ABE95E52A93B8CC00915788 /* Domain */,
+				5A8C1DAD2AB7282F00658EDF /* Repository */,
+				5A8C1DB22AB7368700658EDF /* IRepository */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -574,8 +545,10 @@
 				5A4FA5BD2A17B89500120DC7 /* FirebaseFunctions */,
 				5A4FA5BF2A17B89500120DC7 /* FirebaseFunctionsCombine-Community */,
 				5ABE95EB2A93BB1D00915788 /* Profile */,
-				5ABE95ED2A96643100915788 /* Entry */,
 				5ABE95EF2AA7830400915788 /* Vote */,
+				5A9E8A8A2AB3D0F90018C4D8 /* Login */,
+				5A8C1DAE2AB7286F00658EDF /* Repository */,
+				5AC6EEE92AB759F5003BB0E7 /* IRepository */,
 			);
 			productName = Votes;
 			productReference = 5A4DA6FA2A0BDD6B003E50C0 /* Votes.app */;
@@ -696,7 +669,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A5F1ABB2A4495DE00A7580D /* FollowingProfileData.swift in Sources */,
 				5A2AD8932A3F101100C6F035 /* FireStoreGateway.swift in Sources */,
 				5A4FA5AB2A17AB6600120DC7 /* ProfileRepository.swift in Sources */,
 				5A4DA7072A0BDD6C003E50C0 /* Persistence.swift in Sources */,
@@ -714,19 +686,14 @@
 				5A748EBD2A125D6100917A10 /* AppMain.swift in Sources */,
 				5A5F1AC32A45EA5A00A7580D /* FollowRepository.swift in Sources */,
 				5A4DA7412A0FE211003E50C0 /* UserProfileDetails.swift in Sources */,
-				5A5F1AAD2A3F4C2E00A7580D /* ErrorWrapper.swift in Sources */,
 				5A4DA7442A10BE0C003E50C0 /* SignView.swift in Sources */,
 				5A2334702A70202D00359596 /* VoteHistoryCell.swift in Sources */,
 				5A373B3F2A36AAA3006FDEB3 /* ProfileRegisterView.swift in Sources */,
 				5A7780602A682F6B0097DCA0 /* PhotoPicker.swift in Sources */,
-				5A5F1ABD2A4495FB00A7580D /* FollowerProfileData.swift in Sources */,
 				5A4DA73E2A0FDF39003E50C0 /* OtherProfileView.swift in Sources */,
-				5A373B3C2A2B1CFD006FDEB3 /* ProfileData.swift in Sources */,
 				5A4DA7482A10C195003E50C0 /* SignInView.swift in Sources */,
-				5A77807F2A6D64440097DCA0 /* VoteData.swift in Sources */,
 				5A4DA7462A10BE1C003E50C0 /* SignUpView.swift in Sources */,
 				5AE084252A570A44001BC39D /* RequestPath.swift in Sources */,
-				5A5F1AB92A41E6CE00A7580D /* Interactor.swift in Sources */,
 				5AE0841B2A4FF31B001BC39D /* CompleteRegister.swift in Sources */,
 				5A0EFB882A61B83800EA5D5E /* KeyChainService.swift in Sources */,
 				5AE084202A55B08B001BC39D /* FollowProfileRepository.swift in Sources */,
@@ -744,14 +711,13 @@
 				5A4FA5A32A176D7100120DC7 /* VoteRepository.swift in Sources */,
 				5A7780442A65738C0097DCA0 /* FollowEditor.swift in Sources */,
 				5A7780752A6C3E750097DCA0 /* ProfilePopContext.swift in Sources */,
-				5A748EC72A1270C200917A10 /* AccountData.swift in Sources */,
 				5A373B742A3EA90B006FDEB3 /* RepositoryDependency.swift in Sources */,
 				5A77806C2A6C14140097DCA0 /* Question.swift in Sources */,
 				5AE8CA162A64D8A600FE45D5 /* SearchUserPop.swift in Sources */,
 				5A2AD8912A3EE47B00C6F035 /* ProfileRegisterInteractor.swift in Sources */,
 				5A7780402A651C7C0097DCA0 /* SearchUserInteractor.swift in Sources */,
 				5A373B782A3EAB21006FDEB3 /* SignUpInteractor.swift in Sources */,
-				5A748EC12A12658700917A10 /* AccountRepository.swift in Sources */,
+				5A748EC12A12658700917A10 /* LoginRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1139,17 +1105,25 @@
 			package = 5A4FA5AC2A17B89400120DC7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFunctionsCombine-Community";
 		};
+		5A8C1DAE2AB7286F00658EDF /* Repository */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Repository;
+		};
+		5A9E8A8A2AB3D0F90018C4D8 /* Login */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Login;
+		};
 		5ABE95EB2A93BB1D00915788 /* Profile */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Profile;
 		};
-		5ABE95ED2A96643100915788 /* Entry */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Entry;
-		};
 		5ABE95EF2AA7830400915788 /* Vote */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Vote;
+		};
+		5AC6EEE92AB759F5003BB0E7 /* IRepository */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IRepository;
 		};
 /* End XCSwiftPackageProductDependency section */
 

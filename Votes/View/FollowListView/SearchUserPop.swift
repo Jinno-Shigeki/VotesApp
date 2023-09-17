@@ -12,9 +12,9 @@ struct SearchUserPop: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject private var interactor = SearchUserInteractor(profileRepository: RepositoryDependency.profileRepository)
     @State private var search = ""
-    let onTapCell: (OtherProfile) -> Void
+    let onTapCell: (ProfileBase) -> Void
     
-    init(onTapCell: @escaping (OtherProfile) -> Void) {
+    init(onTapCell: @escaping (ProfileBase) -> Void) {
         self.onTapCell = onTapCell
     }
     

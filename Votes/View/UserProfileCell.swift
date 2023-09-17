@@ -9,22 +9,22 @@ import SwiftUI
 import Profile
 
 struct UserProfileCell: View {
-    let profile: any IProfileBase
+    let profile: ProfileBase
 
-    init(profile: any IProfileBase) {
+    init(profile: ProfileBase) {
         self.profile = profile
     }
 
     var body: some View {
         Group {
             HStack {
-                ProfileImage(base64String: profile.image, width: 50, height: 50)
+                ProfileImage(imageData: profile.image, width: 50, height: 50)
 
                 VStack(alignment: .leading, spacing: 0) {
                     Text(profile.name)
                         .font(Font.system(size: 16, weight: .medium))
                         .padding(.bottom, 8)
-                    Text(profile.id)
+                    Text(profile.displayID)
                         .font(Font.system(size: 11, weight: .light))
                 }
 
@@ -39,7 +39,7 @@ struct UserProfileCell: View {
 struct UserProfileCell_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            UserProfileCell(profile: FollowerProfile(id: "@takumu0151", name: "Takumu Matsumoto", image: ""))
+            UserProfileCell(profile: ProfileBase(userID: "aaa", displayID: "aaa", name: "aaa", image: Data()))
         }
     }
 }

@@ -6,13 +6,13 @@
 //
 
 import Foundation
+import Repository
 
 final class RepositoryDependency {
-    private static let fireStoreGateway = FireStoreGateway()
-    static let accountRepository = AccountRepository(fireStoreGateway: fireStoreGateway)
-    static let profileRepository = ProfileRepository(fireStoreGateway: fireStoreGateway)
-    static let followRepository = FollowRepository(fireStoreGateway: fireStoreGateway)
-    static let followProfileRepository = FollowProfileRepository(fireStoreGateway: fireStoreGateway)
-    static let voteRepository = VoteRepository(fireStoreGateway: fireStoreGateway)
+    private static let fireStore = FireStore()
+    static let loginRepository = LoginRepository(fireStore: fireStore)
+    static let profileRepository = ProfileRepository(fireStore: fireStore)
+    static let followRepository = FollowRepository(fireStore: fireStore)
+    static let voteRepository = VoteRepository(fireStore: fireStore)
     static let questionRepository = QuestionRepository()
 }

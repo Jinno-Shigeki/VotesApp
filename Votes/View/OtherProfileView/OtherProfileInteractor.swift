@@ -7,12 +7,13 @@
 
 import Foundation
 import Profile
+import IRepository
 
 @MainActor
 final class OtherProfileInteractor: ObservableObject {
     private let profileRepository: IProfileRepository
     private let followRepository: IFollowRepository
-    @Published var profile = Profile(id: "", name: "", image: "", message: "", following: 0, follower: 0, votes: 0)
+    @Published var profile = Profile(userID: "", displayID: "", name: "", image: Data(), message: "", following: 0, follower: 0, votes: 0)
     
     init(profileRepository: IProfileRepository, followRepository: IFollowRepository) {
         self.profileRepository = profileRepository
@@ -48,8 +49,8 @@ final class OtherProfileInteractor: ObservableObject {
             do {
                 let userID = LocalSave.getStr(.userID)
                 let ownerProfile = try await profileRepository.getProfile(userID: userID)
-                let owner = FollowerProfile(id: ownerProfile.id, name: ownerProfile.name, image: ownerProfile.image)
-                let following = FollowingProfile(id: profile.id, name: profile.name, image: profile.image)
+                let owner = ProfileBase(userID: userID, displayID: ownerProfile.displayID, name: ownerProfile.name, image: ownerProfile.image)
+                let following = ProfileBase(userID: profile.userID, displayID: profile.displayID, name: profile.name, image: profile.image)
                 try await followRepository.createFollow(owner: owner, following: following)
             } catch {
 
@@ -61,7 +62,7 @@ final class OtherProfileInteractor: ObservableObject {
         Task {
             do {
                 let userID = LocalSave.getStr(.userID)
-                try await followRepository.removeFollow(ownerID: userID, followingID: profile.id)
+                try await followRepository.removeFollow(ownerID: userID, followingID: profile.userID)
             } catch {
 
             }

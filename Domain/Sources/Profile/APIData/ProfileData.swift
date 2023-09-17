@@ -8,27 +8,23 @@
 import Foundation
 
 public struct ProfileData: Codable {
-    public let id: String
+    public let userID: String
+    public let displayID: String
     public let name: String
     public let image: String
     public let message: String
     
-    public init(id: String, name: String, message: String, image: String) {
-        self.id = id
+    public init(userID: String, displayID: String, name: String, message: String, image: String) {
+        self.userID = userID
+        self.displayID = displayID
         self.name = name
         self.image = image
         self.message = message
     }
     
-    public init(profile: Profile) {
-        self.id = profile.id
-        self.name = profile.name
-        self.image = profile.image
-        self.message = profile.message
-    }
-    
     enum CodingKeys: String, CodingKey {
-        case id
+        case userID = "user_id"
+        case displayID = "display_id"
         case name
         case image
         case message

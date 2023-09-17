@@ -6,24 +6,22 @@
 //
 
 import Foundation
+import IRepository
 import Profile
 
 @MainActor
 final class VoteInteractor: ObservableObject {
     let voteRepository: IVoteRepository
     let profileRepository: IProfileRepository
-    let followProfileRepository: IFollowProfileRepository
     let questionRepository: IQuestionRepository
-    @Published var followingProfiles: [FollowingProfile] = [FollowingProfile(id: "", name: "", image: "")]
+    @Published var followingProfiles: [ProfileBase] = [ProfileBase(userID: "", displayID: "", name: "", image: Data())]
     private let userID = LocalSave.getStr(.userID)
     
     init(voteRepository: IVoteRepository,
          profileRepository: IProfileRepository,
-         followProfileRepository: IFollowProfileRepository,
          questionRepository: IQuestionRepository) {
         self.voteRepository = voteRepository
         self.profileRepository = profileRepository
-        self.followProfileRepository = followProfileRepository
         self.questionRepository = questionRepository
     }
     
@@ -31,25 +29,21 @@ final class VoteInteractor: ObservableObject {
         questionRepository.getQuestion()
     }
     
-    func getFollowingProfileBases() {
-        Task {
+    func getFollowingProfileBases() async {
             do {
-                followingProfiles = try await followProfileRepository.getFollowingProfiles(userID: userID)
+                followingProfiles = try await profileRepository.getFollowingProfiles(userID: userID)
             } catch {
                 print(error)
             }
-        }
     }
     
-    func vote(votedProfile: IProfileBase, question: String, complition: @escaping () -> Void) {
-        Task {
-            do {
-                let profile = try await profileRepository.getProfile(userID: userID)
-                try await voteRepository.createVote(ownerProfileBase: profile, voteProfileBase: votedProfile, question: question)
-                complition()
-            } catch {
-                print(error)
-            }
+    func vote(votedProfile: ProfileBase, question: String) async {
+        do {
+            let profile = try await profileRepository.getProfile(userID: userID)
+            let profireBase = ProfileBase(userID: profile.userID, displayID: profile.displayID, name: profile.name, image: profile.image)
+            try await voteRepository.createVote(ownerProfileBase: profireBase, voteProfileBase: votedProfile, question: question)
+        } catch {
+            print(error)
         }
     }
 }

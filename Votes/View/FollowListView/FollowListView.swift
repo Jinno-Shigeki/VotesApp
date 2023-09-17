@@ -10,7 +10,7 @@ import CoreData
 import Profile
 
 struct FollowListView: View {
-    @StateObject private var interactor = FollowListInteractor(followProfileRepository: RepositoryDependency.followProfileRepository)
+    @StateObject private var interactor = FollowListInteractor(profileRepository: RepositoryDependency.profileRepository)
     @State var path = NavigationPath()
     @State private var search = ""
     @State private var isPopShow = false

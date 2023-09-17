@@ -26,8 +26,8 @@ struct SignView: View {
                         .cornerRadius(8)
                 }
                 .sheet(isPresented: $presentation.signIn) {
-                    SignInView() { isUserID in
-                        selectPresentation(isUserID: isUserID)
+                    SignInView() {
+                        selectPresentation(isUserID: false)
                     }
                     .presentationDetents([.medium])
                 }

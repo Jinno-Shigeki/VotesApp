@@ -18,12 +18,12 @@ struct UserProfileDetails: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack(alignment: .top, spacing: 0) {
-                ProfileImage(base64String: profile.image, width: 80, height: 80)
+                ProfileImage(imageData: profile.image, width: 80, height: 80)
                 
                 VStack(alignment: .leading, spacing: 0) {
                     Text(profile.name)
                         .font(.system(size: 16, weight: .bold))
-                    Text(profile.id)
+                    Text(profile.displayID)
                         .font(.system(size: 10, weight: .light))
                     
                     HStack(spacing: 0) {
@@ -64,6 +64,6 @@ struct UserProfileDetails: View {
 
 struct UserProfileDetails_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileDetails(profile: Profile(id: "@takumu0151", name: "Takumu Matsumoto", image: "", message: "よろしくね", following: 0, follower: 0, votes: 0))
+        UserProfileDetails(profile: Profile(userID: "", displayID: "", name: "", image: Data(), message: "", following: 0, follower: 0, votes: 0))
     }
 }

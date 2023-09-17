@@ -12,7 +12,6 @@ struct VoteView: View {
     @StateObject private var interactor = VoteInteractor(
         voteRepository: RepositoryDependency.voteRepository,
         profileRepository: RepositoryDependency.profileRepository,
-        followProfileRepository: RepositoryDependency.followProfileRepository,
         questionRepository: RepositoryDependency.questionRepository)
     @State private var searchParam = ""
     @State private var question = ""
@@ -63,8 +62,9 @@ struct VoteView: View {
                 if popCreater.isActive {
                     ProfilePop(isPopShow: $popCreater.isActive,
                                context: ProfilePopContextKey.vote.content,
-                               profile: popCreater.profileBase!) {
-                        interactor.vote(votedProfile: popCreater.profileBase!, question: question) {
+                               base: popCreater.profileBase!) {
+                        Task {
+                            await interactor.vote(votedProfile: popCreater.profileBase!, question: question)
                             popCreater.inActive()
                         }
                     }
@@ -72,7 +72,7 @@ struct VoteView: View {
             }
         }
         .task {
-            interactor.getFollowingProfileBases()
+            await interactor.getFollowingProfileBases()
             question = interactor.getQuestion()
         }
     }
@@ -81,14 +81,14 @@ struct VoteView: View {
 extension VoteView {
     struct PopCreater {
         var isActive: Bool
-        var profileBase: IProfileBase?
+        var profileBase: ProfileBase?
         
-        init(isActive: Bool, profileBase: IProfileBase? = nil) {
+        init(isActive: Bool, profileBase: ProfileBase? = nil) {
             self.isActive = isActive
             self.profileBase = profileBase
         }
         
-        mutating func active(base: IProfileBase) {
+        mutating func active(base: ProfileBase) {
             isActive = true
             profileBase = base
         }

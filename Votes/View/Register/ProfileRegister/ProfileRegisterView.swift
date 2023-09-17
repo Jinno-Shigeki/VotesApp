@@ -35,7 +35,7 @@ struct ProfileRegisterView: View {
                             .font(.system(size: 14, weight: .bold))
                         
                         ZStack(alignment: .bottomTrailing) {
-                            ProfileImage(base64String: editor.image)
+                            ProfileImage(imageData: editor.image)
                             
                             PhotoPicker() { result in
                                 pickerImage(result: result)
@@ -65,7 +65,7 @@ struct ProfileRegisterView: View {
                         Text("ユーザーID")
                             .font(.system(size: 14, weight: .bold))
                         
-                        TextField(text: $editor.id) {
+                        TextField(text: $editor.displayID) {
                             Text("半角英数字（8文字以上）で入力してください")
                         }
                         .padding(.horizontal, 12)
@@ -116,10 +116,12 @@ struct ProfileRegisterView: View {
 
 extension ProfileRegisterView {
     func setPop() -> some View {
+        let base = ProfileBase(userID: "", displayID: editor.displayID, name: editor.name, image: editor.image)
         return ProfilePop(isPopShow: $isPopShow,
-        context: ProfilePopContextKey.profileCreate.content,
-        profile: editor) {
-            interactor.registerProfile(editor: editor) {
+                          context: ProfilePopContextKey.profileCreate.content,
+                          base: base) {
+            Task {
+                await interactor.registerProfile(editor: editor)
                 withAnimation {
                     enviroment.completeRegister()
                 }
@@ -132,7 +134,7 @@ extension ProfileRegisterView {
     func pickerImage(result: Result<Data, NSError>) {
         switch result {
         case .success(let data):
-            editor.image = data.base64EncodedString()
+            editor.image = data
         case .failure(let err):
             print(err)
         }

@@ -6,31 +6,22 @@
 //
 
 import Foundation
+import IRepository
 import Profile
 
 @MainActor
 final class ProfileRegisterInteractor: ObservableObject {
     private let profileRepository: IProfileRepository
-    private var task: Task<Void, Never>?
     
     init(profileRepository: IProfileRepository) {
         self.profileRepository = profileRepository
     }
     
-    deinit {
-        task?.cancel()
-    }
-
-    func registerProfile(editor: ProfileEditor, complition: @escaping () -> Void) {
-        task = Task { [unowned self] in
-            do {
-                let accountID = LocalSave.getStr(.accountID)
-                try await profileRepository.createProfile(accountID: accountID, profile: editor)
-                LocalSave.setStr(editor.id, .userID)
-                complition()
-            } catch {
-                
-            }
+    func registerProfile(editor: ProfileEditor) async {
+        do {
+            try await profileRepository.createProfile(userID: "", profile: editor)
+        } catch {
+            
         }
     }
 }

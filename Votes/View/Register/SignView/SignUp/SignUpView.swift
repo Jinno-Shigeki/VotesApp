@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @StateObject private var interactor = SignUpInteractor(accountRepository: RepositoryDependency.accountRepository)
+    @StateObject private var interactor = SignUpInteractor(loginRepository: RepositoryDependency.loginRepository)
     @Environment(\.presentationMode) var presentationMode
     @State var input = Input()
     
@@ -52,13 +52,7 @@ struct SignUpView: View {
             
             Button {
                 Task {
-                    await interactor.signUp(email: input.email, pass: input.password) {
-                        presentationMode.wrappedValue.dismiss()
-                        withAnimation {
-                            signUp()
-                        }
-                        
-                    }
+                    await interactor.signUp(email: input.email, pass: input.password)
                 }
             } label: {
                 Text("Sign Up")

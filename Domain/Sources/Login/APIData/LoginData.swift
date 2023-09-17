@@ -7,24 +7,21 @@
 
 import Foundation
 
-public struct AccountData: Codable {
-    public let accountID: String
+public struct LoginData: Codable {
+    public let userID: String
     public let email: String
     public let password: String
-    public let userID: String
     
     enum CodingKeys: String, CodingKey {
-        case accountID = "id"
+        case userID = "user_id"
         case email
         case password
-        case userID = "user_id"
     }
     
-    public init(accountID: String, email: String, password: String, userID: String) {
-        self.accountID = accountID
+    public init(userID: String, email: String, password: String) {
+        self.userID = userID
         self.email = email
         self.password = password
-        self.userID = userID
     }
 }
 

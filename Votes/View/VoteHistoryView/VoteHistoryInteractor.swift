@@ -7,6 +7,7 @@
 
 import Foundation
 import Vote
+import IRepository
 
 @MainActor
 final class VoteHistoryInteractor: ObservableObject {

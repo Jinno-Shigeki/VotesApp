@@ -6,30 +6,21 @@
 //
 
 import Foundation
+import IRepository
 
 @MainActor
 final class SignUpInteractor: ObservableObject {
-    let accountRepository: IAccountRepository
-    private var task: Task<Void, Never>?
+    let loginRepository: ILoginRepository
     
-    init(accountRepository: IAccountRepository) {
-        self.accountRepository = accountRepository
+    init(loginRepository: ILoginRepository) {
+        self.loginRepository = loginRepository
     }
     
-    deinit {
-        task?.cancel()
-    }
-    
-    func signUp(email: String, pass: String, completion: @escaping () -> Void) async {
-        task = Task { [unowned self] in
-            do {
-                let accountID = UUID().uuidString
-                try await accountRepository.createAccount(accountID: accountID, email: email, pass: pass)
-                LocalSave.setStr(accountID, .accountID)
-                completion()
-            } catch {
-                
-            }
+    func signUp(email: String, pass: String) async {
+        do {
+            try await loginRepository.createLogin(email: email, pass: pass)
+        } catch {
+            
         }
     }
 }

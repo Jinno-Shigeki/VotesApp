@@ -23,9 +23,9 @@ struct VoteHistoryCell: View {
                 .padding(.top, 16)
             
             HStack(spacing: 0) {
-                ProfileImage(base64String: vote.image, width: 30, height: 30)
+                ProfileImage(imageData: vote.image, width: 30, height: 30)
 
-                Text(vote.id)
+                Text(vote.displayID)
                     .padding(.leading, 4)
                 Text("に投票しました。")
                 
@@ -56,10 +56,6 @@ extension VoteHistoryCell {
 
 struct VoteHistoryCell_Previews: PreviewProvider {
     static var previews: some View {
-        VoteHistoryCell(vote: Vote(id: "@tkrmmm",
-                                   name: "Takumu Matsumoto",
-                                   image: "",
-                                   question: "あなたの友達の中で最も優しい人は誰？",
-                                   createdAt: Date()))
+        VoteHistoryCell(vote: Vote(userID: "", displayID: "", name: "", image: Data(), question: "", createdAt: Date()))
     }
 }

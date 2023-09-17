@@ -6,33 +6,22 @@
 //
 
 import Foundation
+import IRepository
 
 @MainActor
 final class SignInInteractor: ObservableObject {
-    let accountRepository: IAccountRepository
-    private var task: Task<Void, Never>?
+    let loginRepository: ILoginRepository
     
-    init(accountRepository: IAccountRepository) {
-        self.accountRepository = accountRepository
+    init(loginRepository: ILoginRepository) {
+        self.loginRepository = loginRepository
     }
     
-    deinit {
-        task?.cancel()
-    }
-    
-    func signIn(email: String, password: String, completion: @escaping (_ isUserID: Bool) -> Void) async {
-        task = Task { [unowned self] in
-            do {
-                let account = try await accountRepository.getAccount(email: email, pass: password)
-                if account.userID.isEmpty {
-                    completion(false)
-                    return
-                }
-                LocalSave.setStr(account.userID, .userID)
-                completion(true)
-            } catch {
-                
-            }
+    func signIn(email: String, password: String) async {
+        do {
+            let login = try await loginRepository.getLogin(email: email, pass: password)
+            LocalSave.setStr(login.userID, .userID)
+        } catch {
+            
         }
     }
 }

@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct SignInView: View {
-    @StateObject private var interactor = SignInInteractor(accountRepository: RepositoryDependency.accountRepository)
+    @StateObject private var interactor = SignInInteractor(loginRepository: RepositoryDependency.loginRepository)
     @Environment(\.presentationMode) var presentationMode
     @State var input = Input()
     
-    let signIn: (Bool) -> Void
+    let signIn: () -> Void
     
-    init(signIn: @escaping (Bool) -> Void) {
+    init(signIn: @escaping () -> Void) {
         self.signIn = signIn
     }
     
@@ -53,9 +53,8 @@ struct SignInView: View {
             
             Button {
                 Task {
-                    await interactor.signIn(email: input.email, password: input.password) { isUserID in
-                        signIn(isUserID)
-                    }
+                    await interactor.signIn(email: input.email, password: input.password)
+                    signIn()
                 }
             } label: {
                 Text("Sign in")
@@ -85,7 +84,7 @@ struct SignInView_Previews: PreviewProvider {
             
             VStack {
                 Spacer()
-                SignInView() {_ in 
+                SignInView() { 
                     
                 }
                 .background(Color(.white))

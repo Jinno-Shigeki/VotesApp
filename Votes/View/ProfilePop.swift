@@ -11,14 +11,14 @@ import Profile
 struct ProfilePop: View {
     @Binding var isPopShow: Bool
     let context: ProfilePopContext
-    let profile: IProfileBase
+    let base: ProfileBase
     let onConfirm: () -> Void
     let onCnacel: () -> Void
     
-    init(isPopShow: Binding<Bool>, context: ProfilePopContext, profile: IProfileBase, onConfirm: @escaping () -> Void, onCnacel: @escaping () -> Void = {}) {
+    init(isPopShow: Binding<Bool>, context: ProfilePopContext, base: ProfileBase, onConfirm: @escaping () -> Void, onCnacel: @escaping () -> Void = {}) {
         self._isPopShow = isPopShow
         self.context = context
-        self.profile = profile
+        self.base = base
         self.onConfirm = onConfirm
         self.onCnacel = onCnacel
     }
@@ -41,13 +41,13 @@ struct ProfilePop: View {
                         .padding(.top, 20)
                 }
                 
-                ProfileImage(base64String: profile.image)
+                ProfileImage(imageData: base.image)
                     .padding(.top, 32)
                 
-                Text("\(profile.name)")
+                Text("\(base.name)")
                     .font(.system(size: 18, weight: .bold))
                     .padding(.top, 8)
-                Text("\(profile.id)")
+                Text("\(base.displayID)")
                     .font(.system(size: 12, weight: .thin))
                     .padding(.top, 8)
                 
@@ -90,10 +90,8 @@ struct ProfilePop: View {
 
 struct ProfilePop_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {
-            ProfilePop(isPopShow: .constant(false), context: ProfilePopContextKey.profileCreate.content, profile: ProfileEditor(id: "aaaa", name: "aaaa", message: "aaaa", iconImageString: ""), onConfirm: {}, onCnacel: {})
+        ProfilePop(isPopShow: .constant(false), context: ProfilePopContextKey.vote.content, base: ProfileBase(userID: "", displayID: "", name: "", image: Data())) {
+            
         }
-
-        ProfilePop(isPopShow: .constant(false), context: ProfilePopContextKey.vote.content, profile: ProfileEditor(id: "aaaa", name: "aaaa", message: "aaaa", iconImageString: ""), onConfirm: {}, onCnacel: {})
     }
 }

@@ -12,8 +12,8 @@ let package = Package(
             name: "Domain",
             targets: ["Domain"]),
         .library(
-            name: "Entry",
-            targets: ["Entry"]),
+            name: "Login",
+            targets: ["Login"]),
         .library(
             name: "Profile",
             targets: ["Profile"]),
@@ -32,7 +32,7 @@ let package = Package(
             name: "Domain",
             dependencies: []),
         .target(
-            name: "Entry",
+            name: "Login",
             dependencies: []),
         .target(
             name: "Profile",

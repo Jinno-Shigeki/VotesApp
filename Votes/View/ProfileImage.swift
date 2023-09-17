@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ProfileImage: View {
-    let base64String: String
+    let imageData: Data
     let width: CGFloat
     let height: CGFloat
     @State var error: NSError? = nil
     
-    init(base64String: String, width: CGFloat = 100, height: CGFloat = 100) {
-        self.base64String = base64String
+    init(imageData: Data, width: CGFloat = 100, height: CGFloat = 100) {
+        self.imageData = imageData
         self.width = width
         self.height = height
     }
@@ -35,11 +35,7 @@ struct ProfileImage: View {
     }
     
     func toUIImage() -> UIImage? {
-        if base64String.isEmpty {
-            return nil
-        }
-        let data = Data(base64Encoded: base64String)!
-        guard let uiImage = UIImage(data: data) else {
+        guard let uiImage = UIImage(data: imageData) else {
             error = NSError(domain: "image data decode failure", code: 1)
             return nil
         }
@@ -49,6 +45,6 @@ struct ProfileImage: View {
 
 struct ProfileImage_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileImage(base64String: "")
+        ProfileImage(imageData: Data())
     }
 }

@@ -7,17 +7,26 @@
 
 import Foundation
 
-public struct Profile: IProfileBase, Hashable {
-    public let id: String
+public struct Profile: Hashable {
+    public let userID: String
+    public let displayID: String
     public let name: String
-    public let image: String
+    public let image: Data
     public let message: String
     public let following: Int
     public let follower: Int
     public let votes: Int
     
-    public init(id: String, name: String, image: String, message: String, following: Int, follower: Int, votes: Int) {
-        self.id = id
+    public init(userID: String,
+                displayID: String,
+                name: String,
+                image: Data,
+                message: String,
+                following: Int,
+                follower: Int,
+                votes: Int) {
+        self.userID = userID
+        self.displayID = displayID
         self.name = name
         self.image = image
         self.message = message
@@ -27,6 +36,3 @@ public struct Profile: IProfileBase, Hashable {
     }
 }
 
-enum ProfileCacheleUpdater {
-    
-}

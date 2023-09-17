@@ -7,20 +7,20 @@
 
 import Foundation
 
-public final class ProfileEditor: ObservableObject, IProfileBase {
-    @Published public var id: String
+public final class ProfileEditor: ObservableObject {
+    @Published public var displayID: String
     @Published public var name: String
-    @Published public var image: String
+    @Published public var image: Data
     @Published public var message: String
     
-    public init(id: String, name: String, message: String, iconImageString: String) {
-        self.id = id
+    public init(displayID: String, name: String, message: String, iconImage: Data) {
+        self.displayID = displayID
         self.name = name
         self.message = message
-        self.image = iconImageString
+        self.image = iconImage
     }
     
     public convenience init() {
-        self.init(id: "", name: "", message: "", iconImageString: "")
+        self.init(displayID: "", name: "", message: "", iconImage: Data())
     }
  }
